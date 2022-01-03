@@ -1,0 +1,7 @@
+{
+  "name": "SkiIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
