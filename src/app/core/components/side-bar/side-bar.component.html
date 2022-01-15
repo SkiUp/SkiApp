@@ -1,0 +1,36 @@
+<ion-split-pane contentId="main-content">
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-content>
+      <ion-list id="inbox-list">
+        <ion-list-header>SkiUp</ion-list-header>
+        <ion-note> 123 hi@ionicframework.com</ion-note>
+
+        <ion-menu-toggle
+          auto-hide="false"
+          *ngFor="let p of ['test', 'exemple']; let i = index"
+        >
+          <!-- TODO IMPLEMENT LIST PROPERLY INTO ROUTING -->
+          <ion-item
+            routerDirection="root"
+            lines="none"
+            detail="false"
+            routerLinkActive="selected"
+          >
+            <ion-icon
+              slot="start"
+              [ios]="p + '-outline'"
+              [md]="p + '-sharp'"
+            ></ion-icon>
+            <ion-label>{{ p }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div id="main-content">
+    <app-header></app-header>
+    <ion-content>
+      <ion-router-outlet></ion-router-outlet>
+    </ion-content>
+  </div>
+</ion-split-pane>
