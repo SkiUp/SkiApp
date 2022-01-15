@@ -6,8 +6,12 @@ import { LevelsPage } from './levels.page';
 const routes: Routes = [
   {
     path: '',
-    component: LevelsPage
-  }
+    component: LevelsPage,
+  },
+  {
+    path: ':id',
+    component: LevelsPage,
+  },
 ];
 
 @NgModule({
