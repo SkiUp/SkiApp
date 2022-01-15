@@ -1,0 +1,7 @@
+{
+  "name": "SkiUp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
