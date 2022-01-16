@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LevelDto } from '@features/levels';
 
 @Component({
   selector: 'app-levels-list',
@@ -6,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./levels-list.component.scss'],
 })
 export class LevelsListComponent implements OnInit {
-
-  constructor() { }
+  @Input() levels$: Observable<LevelDto[]>;
+  constructor() {}
 
   ngOnInit() {}
-
 }

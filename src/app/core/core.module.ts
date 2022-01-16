@@ -6,9 +6,10 @@ import {
   SideBarComponent,
 } from './components';
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ShellComponent, HeaderComponent, SideBarComponent],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, RouterModule],
 })
 export class CoreModule {}

@@ -1,9 +1,10 @@
-import { Routes, Route } from '@angular/router';
+import { Route } from '@angular/router';
 
 import { ShellComponent } from '@core/components';
+import { InternalRoutes } from '@core/models';
 
 export class ShellRoutingService {
-  static childRoutes(routes: Routes): Route {
+  static childRoutes(routes: InternalRoutes): Route {
     return {
       path: '',
       component: ShellComponent,
@@ -11,7 +12,6 @@ export class ShellRoutingService {
       canActivateChild: [],
       resolve: {},
       children: routes,
-      // Reuse ShellComponent instance when navigating between child views
       data: { reuse: true },
     };
   }

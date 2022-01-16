@@ -1,1 +1,7 @@
-<ion-list></ion-list>
+<ion-list>
+  <ion-item *ngFor="let level of levels$ | async">
+    <ion-label>{{ level.name }}</ion-label></ion-item
+  >
+</ion-list>
+
+<ng-container #loading> </ng-container>

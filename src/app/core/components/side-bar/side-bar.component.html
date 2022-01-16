@@ -7,21 +7,23 @@
 
         <ion-menu-toggle
           auto-hide="false"
-          *ngFor="let p of ['test', 'exemple']; let i = index"
+          *ngFor="let route of routes; let i = index"
         >
           <!-- TODO IMPLEMENT LIST PROPERLY INTO ROUTING -->
           <ion-item
             routerDirection="root"
             lines="none"
             detail="false"
+            [routerLink]="[route.path]"
             routerLinkActive="selected"
           >
             <ion-icon
+              *ngIf="route.icon"
               slot="start"
-              [ios]="p + '-outline'"
-              [md]="p + '-sharp'"
+              [ios]="route.icon + '-outline'"
+              [md]="route.icon + '-sharp'"
             ></ion-icon>
-            <ion-label>{{ p }}</ion-label>
+            <ion-label>{{ route.label }}</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>

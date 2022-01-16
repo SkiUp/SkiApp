@@ -1,2 +1,2 @@
-<app-search-bar></app-search-bar>
-<app-levels-list></app-levels-list>
+<app-search-bar (searchEvent)="search($event)"></app-search-bar>
+<app-levels-list [levels$]="levels$"></app-levels-list>

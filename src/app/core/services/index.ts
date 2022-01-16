@@ -1,1 +1,1 @@
-export * from './theory.service';
+export * from './shell-routing.service';
