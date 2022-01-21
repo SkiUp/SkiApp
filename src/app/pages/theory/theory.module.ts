@@ -6,8 +6,10 @@ import { IonicModule } from '@ionic/angular';
 import { LevelsListComponent } from '@features/levels/components';
 import { SharedModule } from '@shared/shared.module';
 
-import { LevelsPageRoutingModule } from './levels-routing.module';
-import { LevelsPage } from './levels.page';
+import { LevelsPageRoutingModule } from './theory-routing.module';
+import { LevelsListPage } from './levels-list/levels-list.page';
+import { LevelPage } from './level/level.page';
+import { ExercisePage } from './exercise/exercise.page';
 
 @NgModule({
   imports: [
@@ -17,6 +19,6 @@ import { LevelsPage } from './levels.page';
     IonicModule,
     LevelsPageRoutingModule,
   ],
-  declarations: [LevelsPage, LevelsListComponent],
+  declarations: [LevelsListPage, LevelPage, ExercisePage, LevelsListComponent],
 })
-export class LevelsPageModule {}
+export class TheoryPagesModule {}

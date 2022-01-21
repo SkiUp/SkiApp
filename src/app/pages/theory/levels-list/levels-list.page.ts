@@ -10,10 +10,10 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-levels',
-  templateUrl: './levels.page.html',
-  styleUrls: ['./levels.page.scss'],
+  templateUrl: './levels-list.page.html',
+  styleUrls: ['./levels-list.page.scss'],
 })
-export class LevelsPage implements OnInit {
+export class LevelsListPage implements OnInit {
   public levels$: Observable<LevelDto[]>;
 
   private _searchCriteria: SearchEvent;

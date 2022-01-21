@@ -42,7 +42,7 @@ const routes: InternalRoutes = [
         path: '/levels',
       },
       loadChildren: () =>
-        import('./pages/levels/levels.module').then((m) => m.LevelsPageModule),
+        import('./pages/theory/theory.module').then((m) => m.TheoryPagesModule),
     },
   ]),
   {
