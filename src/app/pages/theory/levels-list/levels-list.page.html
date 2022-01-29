@@ -1,2 +1,5 @@
+<ion-refresher slot="fixed" (ionRefresh)="loadData($event)">
+  <ion-refresher-content> </ion-refresher-content>
+</ion-refresher>
 <app-search-bar (searchEvent)="search($event)"></app-search-bar>
-<app-levels-list [levels$]="levels$"></app-levels-list>
+<app-levels-list [levels$]="levels$" [loading]="loading"></app-levels-list>

@@ -1,24 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { objectToQueryParams } from '@shared/utils';
-import { LevelDto, LevelsQueryDto } from '@features/levels/models';
+import { ExerciseDto, ExercisesQueryDto } from '@features/exercises/models';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LevelService {
+export class ExerciseService {
   constructor(private _httpClient: HttpClient) {}
 
-  public getLevels(queryDto: LevelsQueryDto): Observable<LevelDto[]> {
-    return this._httpClient.get<LevelDto[]>('http://localhost:3000/levels', {
-      params: objectToQueryParams(queryDto),
-    });
+  public getExercises(queryDto: ExercisesQueryDto): Observable<ExerciseDto[]> {
+    return this._httpClient.get<ExerciseDto[]>(
+      'http://localhost:3000/exercises',
+      {
+        params: objectToQueryParams(queryDto),
+      }
+    );
   }
 
-  public getLevel(id: string): Observable<LevelDto> {
-    return this._httpClient.get<LevelDto>(`http://localhost:3000/levels/${id}`);
-  }
+  // public getLevel(id: number): Observable<LevelDto> {
+  //   this._httpClient.get<LevelDto>(`/levels/${id}`);
+  // }
 
   // public createLevel(level: LevelDto): Observable<LevelDto> {
   //   this._httpClient.post<LevelDto>('/levels', level);

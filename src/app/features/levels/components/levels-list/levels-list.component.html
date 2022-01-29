@@ -1,7 +1,13 @@
 <ion-list>
-  <ion-item *ngFor="let level of levels$ | async" (click)="getExercises(level)">
-    <ion-label>{{ level.name }}</ion-label>
-  </ion-item>
+  <ng-container *ngIf="!loading; else loading_template">
+    <ion-item *ngFor="let level of levels$ | async" [routerLink]="[level.id]">
+      <ion-label>{{ level.name }}</ion-label>
+    </ion-item>
+  </ng-container>
 </ion-list>
 
-<ng-container #loading> </ng-container>
+<ng-template #loading_template>
+  <ion-item *ngFor="let item of [].constructor(10)">
+    <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+  </ion-item>
+</ng-template>

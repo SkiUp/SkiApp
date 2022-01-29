@@ -1,3 +1,16 @@
-<p>
-  level works!
-</p>
+<ng-container *ngIf="level$ | async as level ">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> {{level.name}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text style="font-size: 16px;">
+        {{level.description}}
+      </ion-text>
+    </ion-card-content>
+
+    <ion-card-content style="padding: 0px;">
+      <app-exercises-list [exercises$]="exercises$" [loading]='exercisesLoading'></app-exercises-list>
+    </ion-card-content>
+  </ion-card>
+</ng-container>

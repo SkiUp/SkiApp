@@ -17,9 +17,9 @@ export class HeaderComponent {
     //   next: (data) => {
     //     console.log(data);
     //   },
-    // });
+    //  });
     // this._router.events
-    //   .pipe(filter((evt) => evt instanceof NavigationEnd))
+    //    .pipe(filter((evt) => evt instanceof NavigationEnd))
     //   .subscribe((event) => {
     //     console.log('event.url', event['url']);
     //     console.log('event', event);
