@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-slope-type',
   templateUrl: './slope-type.component.html',
   styleUrls: ['./slope-type.component.scss'],
 })
-export class SlopeTypeComponent {}
+export class SlopeTypeComponent {
+  @Input() slopeType: string
+}

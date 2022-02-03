@@ -4,24 +4,25 @@
       <ion-item *ngFor="let exercise of exercises$ | async">
         <ion-accordion [value]="exercise.id" toggle-icon="none">
           <ion-item slot="header">
-            <ion-icon class="official_checkmark" name="checkmark" color="primary"></ion-icon>
-            <ion-label>
+            <ion-icon
+              class="official_checkmark"
+              name="checkmark"
+              color="primary"
+            ></ion-icon>
+            <ion-label class="ion-text-wrap">
               {{ exercise.description }}
             </ion-label>
           </ion-item>
 
           <ion-list slot="content">
             <ion-item>
-              <ion-label>{{ exercise.mouvement }}</ion-label>
-              <ion-icon name="close-circle"></ion-icon>
-              <ion-icon name="close-circle"></ion-icon>
+              <ion-label class="ion-text-wrap">
+                {{ exercise.mouvement }}
+              </ion-label>
+              <app-slope-type></app-slope-type>
             </ion-item>
-            <ion-item>
-              <ion-img
-                [src]="
-                  'https://mocah.org/uploads/posts/856456-Winter-Skiing-Men-Snow.jpg'
-                "
-              ></ion-img>
+            <ion-item *ngIf="exercise.asset">
+              <ion-img [src]="exercise.asset"></ion-img>
             </ion-item>
           </ion-list>
         </ion-accordion>

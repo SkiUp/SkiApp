@@ -49,6 +49,37 @@ const routes: InternalRoutes = [
     path: '*',
     redirectTo: 'levels',
   },
+  {
+    path: 'admin',
+    children: [
+      {
+        path: 'theory',
+        children: [
+          {
+            path: 'create-level',
+            loadChildren: () =>
+              import(
+                './pages/admin/theory/create-level/create-level.module'
+              ).then((m) => m.CreateLevelPageModule),
+          },
+          {
+            path: 'create-exercise',
+            loadChildren: () =>
+              import(
+                './pages/admin/theory/create-exercise/create-exercise.module'
+              ).then((m) => m.CreateExercisePageModule),
+          },
+          {
+            path: 'create-movement',
+            loadChildren: () =>
+              import(
+                './pages/admin/theory/create-movement/create-movement.module'
+              ).then((m) => m.CreateMovementPageModule),
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 @NgModule({
