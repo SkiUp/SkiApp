@@ -4,13 +4,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { ExercisesListComponent } from './components/exercises-list/exercises-list.component';
+import { SharedModule } from '@shared/shared.module';
 
-const components = [ExercisesListComponent];
+import {
+  ExercisesListComponent,
+  ExerciseTypeComponent,
+} from '@features/exercises/components';
+
+const components = [ExercisesListComponent, ExerciseTypeComponent];
 
 @NgModule({
   declarations: [...components],
-  imports: [HttpClientModule, IonicModule, CommonModule, RouterModule],
+  imports: [
+    HttpClientModule,
+    IonicModule,
+    CommonModule,
+    RouterModule,
+    SharedModule,
+  ],
   exports: [...components],
 })
 export class ExercisesModule {}
