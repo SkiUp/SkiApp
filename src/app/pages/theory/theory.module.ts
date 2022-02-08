@@ -7,18 +7,20 @@ import { SharedModule } from '@shared/shared.module';
 import { LevelsModule } from '@features/levels';
 import { ExercisesModule } from '@features/exercises';
 import { LevelsPageRoutingModule } from '@pages/theory/theory-routing.module';
+import { ExercisePage } from '@pages/theory/exercise/exercise.page';
 import { LevelsListPage } from '@pages/theory/levels-list/levels-list.page';
 import { LevelPage } from '.';
 
 @NgModule({
   imports: [
-    LevelsModule,ExercisesModule,
+    IonicModule,
     CommonModule,
     SharedModule,
     FormsModule,
-    IonicModule,
+    LevelsModule,
+    ExercisesModule,
     LevelsPageRoutingModule,
   ],
-  declarations: [LevelsListPage, LevelPage],
+  declarations: [ExercisePage, LevelsListPage, LevelPage],
 })
 export class TheoryPagesModule {}

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LevelPage } from '.';
-import { ExercisePage } from './exercise/exercise.page';
 
-import { LevelsListPage } from './levels-list/levels-list.page';
+import { LevelPage } from '@pages/theory/level/level.page';
+import { ExercisePage } from '@pages/theory/exercise/exercise.page';
+import { LevelsListPage } from '@pages/theory/levels-list/levels-list.page';
 
 const routes: Routes = [
   {

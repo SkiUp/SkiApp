@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { objectToQueryParams } from '@shared/utils';
 import { ExerciseDto, ExercisesQueryDto } from '@features/exercises/models';
-import { Observable } from 'rxjs';
+import { environment } from '@enviroments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +15,7 @@ export class ExerciseService {
 
   public getExercises(queryDto: ExercisesQueryDto): Observable<ExerciseDto[]> {
     return this._httpClient.get<ExerciseDto[]>(
-      'http://localhost:3000/exercises',
+      `${environment.apiUrl}/exercises`,
       {
         params: objectToQueryParams(queryDto),
       }
