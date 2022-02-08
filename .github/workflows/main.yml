@@ -6,8 +6,8 @@ on:
       - 'main'
 
 jobs:
- build ⚙:
-    name: Build and Test
+  build:
+    name: Build ⚙
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,7 +26,8 @@ jobs:
         with:
           name: deploy_dist
           path: dist
-  deploy 🚀:
+  deploy:
+    name: Deploy 🚀
     runs-on: ubuntu-latest
     needs: build
     steps:
