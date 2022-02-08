@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ionic build",
-    "build:ci": "ionic build --configuration production --aot"
+    "build": "ng build",
+    "build:ci": "ng build --configuration production --aot"
   },
   "private": true,
   "dependencies": {
