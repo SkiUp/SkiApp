@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ExerciseTypes } from '@app/core';
 
 @Component({
   selector: 'app-exercise-type',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./exercise-type.component.scss'],
 })
 export class ExerciseTypeComponent {
+  @Input() exerciseType: ExerciseTypes
+
   public get value(): string {
-    return 'MB';
+    return this.exerciseType?.toString();
   }
 }

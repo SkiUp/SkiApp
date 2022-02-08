@@ -1,9 +1,9 @@
-import { SlopeTypes } from '@app/core';
+import { ExerciseTypes, SlopeTypes } from '@app/core';
 export interface ExerciseDto {
   id: string;
   description: string;
   slopeType: SlopeTypes;
-  type: unknown;
+  type: ExerciseTypes;
   level: unknown;
   mouvement: unknown;
   isOfficial: boolean;

@@ -19,7 +19,7 @@
               <ion-label class="ion-text-wrap">
                 {{ exercise.mouvement }}
               </ion-label>
-              <app-exercise-type></app-exercise-type>
+              <app-exercise-type [exerciseType]="exercise.type"></app-exercise-type>
               <app-slope-type [slopeType]="exercise.slopeType"></app-slope-type>
             </ion-item>
             <ion-item *ngIf="exercise.asset">

@@ -8,6 +8,8 @@ import { ExerciseDto } from '@features/exercises/models';
   styleUrls: ['./exercises-list.component.scss'],
 })
 export class ExercisesListComponent {
+  // todo reorder to  mb, hb, ex
   @Input() exercises$: Observable<ExerciseDto[]>;
+
   @Input() loading = true;
 }
