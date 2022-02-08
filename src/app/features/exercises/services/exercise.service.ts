@@ -4,8 +4,7 @@ import { Observable } from 'rxjs';
 
 import { objectToQueryParams } from '@shared/utils';
 import { ExerciseDto, ExercisesQueryDto } from '@features/exercises/models';
-import { environment } from '@enviroments/environment';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
