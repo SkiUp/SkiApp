@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { objectToQueryParams } from '@shared/utils';
 import { LevelDto, LevelsQueryDto } from '@features/levels/models';
 import { Observable } from 'rxjs';
+import { environment } from '@enviroments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +12,13 @@ export class LevelService {
   constructor(private _httpClient: HttpClient) {}
 
   public getLevels(queryDto: LevelsQueryDto): Observable<LevelDto[]> {
-    return this._httpClient.get<LevelDto[]>('http://localhost:3000/levels', {
+    return this._httpClient.get<LevelDto[]>(`${environment.apiUrl}/levels`, {
       params: objectToQueryParams(queryDto),
     });
   }
 
   public getLevel(id: string): Observable<LevelDto> {
-    return this._httpClient.get<LevelDto>(`http://localhost:3000/levels/${id}`);
+    return this._httpClient.get<LevelDto>(`${environment.apiUrl}/levels/${id}`);
   }
 
   // public createLevel(level: LevelDto): Observable<LevelDto> {
