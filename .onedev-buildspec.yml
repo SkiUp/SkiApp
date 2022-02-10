@@ -15,7 +15,7 @@ jobs:
   - !CommandStep
     name: build & test
     runInContainer: true
-    image: node:8
+    image: node:lts
     interpreter: !DefaultInterpreter
       commands:
       - npm install
