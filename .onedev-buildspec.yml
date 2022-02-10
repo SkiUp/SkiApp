@@ -15,7 +15,7 @@ jobs:
   - !CommandStep
     name: build & test
     runInContainer: true
-    image: 1dev/buildspec-node:10.16-alpine-chrome
+    image: 1dev/buildspec-node:16.10-alpine-chrome
     interpreter: !DefaultInterpreter
       commands:
       - npm install
