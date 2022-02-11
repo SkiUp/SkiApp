@@ -26,7 +26,7 @@ jobs:
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   - !BuildImageStep
     name: build docker image and publish it
-    tags: https://docker.matai.info/skiup/web
+    tags: docker.matai.info/skiup/web
     publish: true
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   triggers:
