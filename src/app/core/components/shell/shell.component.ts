@@ -7,7 +7,5 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./shell.component.scss'],
 })
 export class ShellComponent {
-  constructor() {
-    console.log('shell');
-  }
+  constructor() {}
 }

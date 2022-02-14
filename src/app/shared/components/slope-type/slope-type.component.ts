@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { SlopeTypes } from '@app/core';
+import { NgxPopperjsPlacements, NgxPopperjsTriggers } from 'ngx-popperjs';
 
 @Component({
   selector: 'app-slope-type',
@@ -8,6 +9,9 @@ import { SlopeTypes } from '@app/core';
 })
 export class SlopeTypeComponent {
   @Input() slopeType: SlopeTypes;
+
+  public NgxPopperjsPlacements = NgxPopperjsPlacements;
+  public NgxPopperjsTriggers = NgxPopperjsTriggers;
 
   public get iconType(): number {
     switch (this.slopeType) {
@@ -26,6 +30,5 @@ export class SlopeTypeComponent {
       case SlopeTypes.STEEP_SECTION:
         return 3;
     }
-    return 0;
   }
 }

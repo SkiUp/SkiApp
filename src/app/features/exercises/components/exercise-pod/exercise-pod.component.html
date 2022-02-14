@@ -1,0 +1,23 @@
+<ion-accordion *ngIf="exercise.asset; else mainInfo" [value]="exercise.id">
+  <ng-container *ngTemplateOutlet="mainInfo"></ng-container>
+
+  <ion-list slot="content">
+    <ion-label class="ion-text-wrap">
+      {{ exercise.mouvement }}
+    </ion-label>
+    <ion-item *ngIf="exercise.asset">
+      <ion-img [src]="exercise.asset"></ion-img>
+    </ion-item>
+  </ion-list>
+</ion-accordion>
+
+<ng-template #mainInfo>
+  <ion-item slot="header">
+    <app-exercise-type [exerciseType]="exercise.type"> </app-exercise-type>
+    <ion-label class="ion-text-wrap">
+      {{ exercise.description }}
+    </ion-label>
+
+    <app-slope-type [slopeType]="exercise.slopeType"></app-slope-type>
+  </ion-item>
+</ng-template>

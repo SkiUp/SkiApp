@@ -1,33 +1,10 @@
 <ion-list>
   <ng-container *ngIf="!loading; else loading_template">
     <ion-accordion-group>
-      <ion-item *ngFor="let exercise of exercises$ | async">
-        <ion-accordion [value]="exercise.id" toggle-icon="none">
-          <ion-item slot="header">
-            <ion-icon
-              class="official_checkmark"
-              name="checkmark"
-              color="primary"
-            ></ion-icon>
-            <ion-label class="ion-text-wrap">
-              {{ exercise.description }}
-            </ion-label>
-          </ion-item>
-
-          <ion-list slot="content">
-            <ion-item>
-              <ion-label class="ion-text-wrap">
-                {{ exercise.mouvement }}
-              </ion-label>
-              <app-exercise-type [exerciseType]="exercise.type"></app-exercise-type>
-              <app-slope-type [slopeType]="exercise.slopeType"></app-slope-type>
-            </ion-item>
-            <ion-item *ngIf="exercise.asset">
-              <ion-img [src]="exercise.asset"></ion-img>
-            </ion-item>
-          </ion-list>
-        </ion-accordion>
-      </ion-item>
+      <app-exercise-pod
+        *ngFor="let exercise of exercises"
+        [exercise]="exercise"
+      ></app-exercise-pod>
     </ion-accordion-group>
   </ng-container>
 </ion-list>

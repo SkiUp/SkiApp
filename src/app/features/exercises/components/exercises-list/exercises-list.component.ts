@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
+
 import { ExerciseDto } from '@features/exercises/models';
 
 @Component({
@@ -9,7 +9,6 @@ import { ExerciseDto } from '@features/exercises/models';
 })
 export class ExercisesListComponent {
   // todo reorder to  mb, hb, ex
-  @Input() exercises$: Observable<ExerciseDto[]>;
-
+  @Input() exercises: ExerciseDto[];
   @Input() loading = true;
 }

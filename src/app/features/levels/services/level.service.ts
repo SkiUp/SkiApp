@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { objectToQueryParams } from '@shared/utils';
-import { LevelDto, LevelsQueryDto } from '@features/levels/models';
+
 import { Observable } from 'rxjs';
+
 import { environment } from '@enviroments/environment';
+import { objectToQueryParams } from '@shared/utils';
+
+import { LevelDto, LevelsQueryDto } from '@features/levels';
 
 @Injectable({
   providedIn: 'root',

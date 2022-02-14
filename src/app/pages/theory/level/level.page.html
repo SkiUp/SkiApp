@@ -10,7 +10,7 @@
     </ion-card-content>
 
     <ion-card-content style="padding: 0px;">
-      <app-exercises-list [exercises$]="exercises$" [loading]='exercisesLoading'></app-exercises-list>
+      <app-exercises-list [exercises]="exercises$ | async" [loading]='exercisesLoading'></app-exercises-list>
     </ion-card-content>
   </ion-card>
 </ng-container>

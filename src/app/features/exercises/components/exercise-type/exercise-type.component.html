@@ -1,1 +1,16 @@
-<div>{{ value }}</div>
+
+<div
+  [popper]="popper1Content"
+  [popperShowOnStart]="false"
+  [popperHideOnScroll]="true"
+  [popperHideOnClickOutside]="true"
+  [popperTrigger]="NgxPopperjsTriggers.click"
+  [popperPlacement]="NgxPopperjsPlacements.RIGHT"
+>
+  {{ value }}
+</div>
+
+<popper-content #popper1Content>
+  {{ value }}
+  <!-- todo -->
+</popper-content>

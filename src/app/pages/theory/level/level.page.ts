@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ExerciseTypes } from '@app/core';
 import { QueryOperators } from '@core/models';
 import { ExerciseDto, ExerciseService } from '@features/exercises';
 import { LevelDto, LevelService } from '@features/levels';
 import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-level',
@@ -24,29 +26,41 @@ export class LevelPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.level$ = this._levelService.getLevel(this._route.snapshot.params.id);
-    this.exercises$ = this._exerciseService.getExercises({
-      filters: [
-        {
-          filterType: 'array',
-          queryOperator: QueryOperators.EQUAL,
-          value: [this._route.snapshot.params.id],
-          propertyName: 'levelId',
-        },
-      ],
-    });
+    this.level$ = this._levelService
+      .getLevel(this._route.snapshot.params.id)
+      .pipe(
+        tap(() => {
+          this.levelLoading = false;
+        })
+      );
 
-    this.level$.subscribe({
-      next: () => {
-        this.levelLoading = false;
-      },
-    });
-
-    this.exercises$.subscribe({
-      next: (data) => {
-        console.log('here',data)
-        this.exercisesLoading = false;
-      },
-    });
+    this.exercises$ = this._exerciseService
+      .getExercises({
+        filters: [
+          {
+            filterType: 'array',
+            queryOperator: QueryOperators.EQUAL,
+            value: [this._route.snapshot.params.id],
+            propertyName: 'levelId',
+          },
+        ],
+      })
+      .pipe(
+        map((exercises) => {
+          const MB = exercises.filter(
+            (exercise) => exercise.type === ExerciseTypes.MANEUVRE_DE_BASE
+          );
+          const HB = exercises.filter(
+            (exercise) => exercise.type === ExerciseTypes.HABILITEE
+          );
+          const EX = exercises.filter(
+            (exercise) => exercise.type === ExerciseTypes.EXERCICE
+          );
+          return [...MB, ...HB, ...EX];
+        }),
+        tap(() => {
+          this.exercisesLoading = false;
+        })
+      );
   }
 }

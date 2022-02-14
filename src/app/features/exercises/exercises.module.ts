@@ -9,14 +9,21 @@ import { SharedModule } from '@shared/shared.module';
 import {
   ExercisesListComponent,
   ExerciseTypeComponent,
+  ExercisePodComponent,
 } from '@features/exercises/components';
+import { NgxPopperjsModule } from 'ngx-popperjs';
 
-const components = [ExercisesListComponent, ExerciseTypeComponent];
+const components = [
+  ExercisesListComponent,
+  ExerciseTypeComponent,
+  ExercisePodComponent,
+];
 
 @NgModule({
   declarations: [...components],
   imports: [
     HttpClientModule,
+    NgxPopperjsModule,
     IonicModule,
     CommonModule,
     RouterModule,

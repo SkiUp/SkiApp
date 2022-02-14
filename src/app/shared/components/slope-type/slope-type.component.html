@@ -1,14 +1,37 @@
-<ng-container [ngSwitch]="iconType">
-  <ion-icon class="easy" *ngSwitchCase="0" name="ellipse"></ion-icon>
+<div
+  [ngSwitch]="iconType"
+  [popper]="popper1Content"
+  [popperShowOnStart]="false"
+  [popperHideOnScroll]="true"
+  [popperHideOnClickOutside]="true"
+  [popperTrigger]="NgxPopperjsTriggers.click"
+  [popperPlacement]="NgxPopperjsPlacements.LEFT"
+>
+  <ng-container>
+    <ion-icon class="easy" *ngSwitchCase="0" name="ellipse"></ion-icon>
 
-  <ion-icon class="hard" *ngSwitchCase="1" name="square"></ion-icon>
-  <ion-icon class="hard" *ngSwitchCase="1.5" name="square"></ion-icon>
+    <ion-icon class="hard" *ngSwitchCase="1" name="square"></ion-icon>
+    <ion-icon class="hard" *ngSwitchCase="1.5" name="square"></ion-icon>
 
-  <ion-icon class="hard_plus lozange" *ngSwitchCase="2" name="square"></ion-icon>
-  <ion-icon class="hard_plus lozange" *ngSwitchCase="2.5" name="square"></ion-icon>
+    <ion-icon
+      class="hard_plus lozange"
+      *ngSwitchCase="2"
+      name="square"
+    ></ion-icon>
+    <ion-icon
+      class="hard_plus lozange"
+      *ngSwitchCase="2.5"
+      name="square"
+    ></ion-icon>
 
-  <div *ngSwitchCase="3">
-    <ion-icon class="hard_plus lozange" name="square"></ion-icon>
-    <ion-icon class="hard_plus lozange" name="square"></ion-icon>
-  </div>
-</ng-container>
+    <div *ngSwitchCase="3">
+      <ion-icon class="hard_plus lozange" name="square"></ion-icon>
+      <ion-icon class="hard_plus lozange" name="square"></ion-icon>
+    </div>
+  </ng-container>
+</div>
+
+<popper-content #popper1Content>
+  ye
+  <!-- todo -->
+</popper-content>
