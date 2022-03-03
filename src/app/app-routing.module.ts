@@ -17,6 +17,11 @@ const routes: InternalRoutes = [
       pathMatch: 'full',
     },
     {
+      path: 'login',
+      loadChildren: () =>
+        import('./pages/login/login.module').then((m) => m.LoginModule),
+    },
+    {
       path: 'home',
       data: {
         headerConfig: {
